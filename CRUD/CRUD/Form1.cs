@@ -1,5 +1,5 @@
 ﻿using CRUD.Clases;
-using CRUD.Models;
+using CRUD.Database;
 using System;
 using System.Data.Entity;
 using System.Drawing;
@@ -103,7 +103,7 @@ namespace CRUD
             }
         }
 
-        private void BtGuardar_Click(object sender, EventArgs e)
+        public void BtGuardar_Click(object sender, EventArgs e)
         {
             using (DB db= new DB())
             {
@@ -115,7 +115,7 @@ namespace CRUD
                         db.Set<Producto>().Attach(obj);
                         
                     }
-                    if (obj.ID==0)
+                    else if (obj.ID == 0)
                     {
                         db.Entry<Producto>(obj).State = EntityState.Added;
                     }

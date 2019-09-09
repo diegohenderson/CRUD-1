@@ -1,4 +1,4 @@
-namespace CRUD.Models
+namespace CRUD.Database
 {
     using System;
     using System.Data.Entity;
